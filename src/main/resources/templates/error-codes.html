@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PCO - Error Codes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        html,
+        body,
+        .intro {
+            height: 100%;
+        }
+
+        table td,
+        table th {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .card {
+            border-radius: .5rem;
+        }
+    </style>
+</head>
+<body>
+<section class="intro">
+    <div class="bg-image h-100" style="background-position: top -420px left -30px; background-image: url('https://www.futurebrand.com/uploads/_heroImage/juliusbaer-futurebrand4.jpg');">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(25, 185, 234,.25);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h2 style="text-align: center;text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; color: #00b8d8">PCO - Error Codes</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Error Code</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Logging Pattern</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="error : ${errors}">
+                                            <th scope="row">
+                                                    <span class="text-danger">
+                                                        <i class="fas fa-caret-down me-1"></i>
+                                                    </span>
+                                                <span th:text="${error.errorCode}"></span></th>
+                                            <td><span th:text="${error.description}"></span></td>
+                                            <td><span th:text="${error.loggingPattern}"></span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

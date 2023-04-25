@@ -1,0 +1,14 @@
+version: '3'
+services:
+  # DB
+  postgres-postgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    command: postgres
+    volumes:
+      - ./volumes/sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql

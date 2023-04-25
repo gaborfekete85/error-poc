@@ -1,0 +1,13 @@
+environment:
+  type: embedded
+  db: oracle
+
+spring:
+  datasource:
+    embedded: oracle
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
